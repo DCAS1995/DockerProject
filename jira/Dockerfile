@@ -1,5 +1,5 @@
 FROM ubuntu:v2_java
-MAINTAINER DanielS
+MAINTAINER DanielS <dcas1995@gmail.com>
 
 #Update the system
 RUN apt-get update

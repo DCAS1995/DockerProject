@@ -1,6 +1,6 @@
 #Docker file to deploy a Java application
 FROM ubuntu:16.04
-MAINTAINER DanielS
+MAINTAINER DanielS <dcas1995@gmail.com>
 
 #Get get and wget
 RUN apt-get -y update
