@@ -15,5 +15,5 @@ RUN ./atlassian-jira-6.4.9-x64.bin -q -varfile /opt/response.varfile
 
 #Start Jira on startup of machine
 WORKDIR /opt/atlassian/jira/bin
-ENTRYPOINT ./start-jira.sh && tail -F /var/lib/jira/error.log
+ENTRYPOINT ./start-jira.sh && bash
 
