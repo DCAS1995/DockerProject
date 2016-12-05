@@ -5,6 +5,8 @@
 #### This needs to be done this way as all that depend on java will build on this model
 docker build ubuntu:v2_java .
 
+## Execute the commands from within the corresponding folders
+
 ## Jenkins
 docker build -t ubuntu:v3_jenkins .
 
