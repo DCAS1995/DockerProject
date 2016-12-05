@@ -14,13 +14,6 @@ RUN cp -r jdk1.8.0_05/ /opt
 RUN update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_05/bin/java 100
 RUN update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_05/bin/javac 100
 
-#ownload a simple java class to test the java install
-RUN git clone https://github.com/leereilly/hello-world-java.git
-WORKDIR hello-world-java
-RUN javac HelloWorld.java
-RUN java HelloWorld 
-
-
 #nstall maven
 WORKDIR ~
 RUN wget http://mirror.ox.ac.uk/sites/rsync.apache.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
