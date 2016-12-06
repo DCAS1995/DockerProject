@@ -22,3 +22,8 @@ docker run -d -p 8007:8081 ubuntu:v4_jira
 docker build -t ubuntu:v5_nexus .
 
 docker run -d -p 8008:8081 ubuntu:v5_nexus
+
+##Tomcat
+docker build -t ubuntu:v7_tomcat .
+
+docker run -d -p 8010:8080 ubuntu:v7_tomcat
