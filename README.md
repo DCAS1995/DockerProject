@@ -23,10 +23,22 @@ docker build -t ubuntu:v5_nexus .
 
 docker run -d -p 8008:8081 ubuntu:v5_nexus
 
-##Zabbix
+## Zabbix
 docker build -t ubuntu:v6_zabbix .
 
 docker run -d -p 80:80 ubuntu:v6_zabbix
+
+Go to localhost/zabbix
+Pre installation
+DBhost=localhost
+DBPort=3306
+DBname=zabbixdb
+DBUser=zabbix
+DBpassword=123
+
+Post Install Login 
+User=Admin
+Password=zabbix
 
 ##Tomcat
 docker build -t ubuntu:v7_tomcat .
