@@ -26,7 +26,7 @@ docker run -d -p 8008:8081 ubuntu:v5_nexus
 ## Zabbix
 docker build -t ubuntu:v6_zabbix .
 
-docker run -d -p 80:80 ubuntu:v6_zabbix
+docker run -dit -p 80:80 ubuntu:v6_zabbix
 
 Go to localhost/zabbix
 
@@ -49,7 +49,13 @@ User=Admin
 Password=zabbix
 
 
-##Tomcat
+## Tomcat
 docker build -t ubuntu:v7_tomcat .
 
-docker run -d -p 8010:8080 ubuntu:v7_tomcat
+docker run -dit -p 8010:8080 ubuntu:v7_tomcat
+
+## Postfix
+docker build -t ubuntu:v8_postfix .
+
+docker run -it ubuntu:v8_postfix bash
+postfix start
