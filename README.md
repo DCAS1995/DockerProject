@@ -30,7 +30,7 @@ docker run -d -p 80:80 ubuntu:v6_zabbix
 
 Go to localhost/zabbix
 
-Pre installation
+### Pre installation
 
 DBhost=localhost
 
@@ -42,7 +42,7 @@ DBUser=zabbix
 
 DBpassword=123
 
-Post Install Login 
+### Post Install Login 
 
 User=Admin
 
