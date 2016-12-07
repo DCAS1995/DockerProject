@@ -6,7 +6,8 @@ RUN apt-get update && \
 apt-get install -y wget && \
 apt-get install -y make && \
 apt-get install -y gcc && \
-apt-get install -y git
+apt-get install -y git && \
+apt-get install -y libicu-dev
 
 #Download postfix
 WORKDIR /opt
@@ -36,4 +37,8 @@ WORKDIR /opt
 RUN git clone https://github.com/DCAS1995/aliases.git
 RUN mv aliases/aliases /etc
 
+#WORKDIR /usr/ports/mail/postfix-current
+#RUN make config
+#RUN make install clean
 
+#ENTRYPOINT /usr/sbin/postfix check && /usr/sbin/postfix start
