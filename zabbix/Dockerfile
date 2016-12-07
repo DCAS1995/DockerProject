@@ -9,7 +9,8 @@ RUN apt-get install -y wget
 RUN echo 'mysql-server mysql-server/root_password password 123'| debconf-set-selections
 RUN echo 'mysql-server mysql-server/root_password_again password 123'|debconf-set-selections
 RUN apt-get install -y mysql-server
-RUN apt-get install -y php7.0 php7.0-cli php7.0-common php7.0-mysql libapache2-mod-php7.0 php7.0-cgi php7.0-xmlreader php7.0-xmlwriter php7.0-bcmath php7.0-mbstring
+RUN apt-get install -y php7.0 php7.0-cli php7.0-common php7.0-mysql libapache2-mod-php7.0\
+ php7.0-cgi php7.0-xmlreader php7.0-xmlwriter php7.0-bcmath php7.0-mbstring
 
 
 #Download and install Zabbix
