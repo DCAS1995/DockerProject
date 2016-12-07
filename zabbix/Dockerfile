@@ -2,9 +2,9 @@ FROM ubuntu:16.04
 MAINTAINER DanielS <dcas1995@gmail.com>
 
 #Download and install the dependencies for Zabbix
-RUN apt-get update
-RUN apt-get install -y apache2
-RUN apt-get install -y wget 
+RUN apt-get update && \
+ apt-get install -y apache2 &&\
+ apt-get install -y wget 
 
 RUN echo 'mysql-server mysql-server/root_password password 123'| debconf-set-selections
 RUN echo 'mysql-server mysql-server/root_password_again password 123'|debconf-set-selections
