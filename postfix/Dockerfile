@@ -47,7 +47,7 @@ WORKDIR /etc/postfix
 RUN sed -i '96i myhostname=daniels.qac.local' main.cf 
 RUN sed -i '104i mydomain=qac.local' main.cf
 RUN sed -i '121i myorigin=$mydomain' main.cf
-RUN sed -i '138i inet_interfaces=loopback-only' main.cf
+RUN sed -i '138i inet_interfaces=localhost' main.cf
 RUN sed -i '187i mydestination=~/mail' main.cf
 #RUN sed -i '338i relayhosts=$mydomain' main.cf
 
