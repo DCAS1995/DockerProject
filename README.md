@@ -23,6 +23,11 @@ docker build -t ubuntu:v5_nexus .
 
 docker run -d -p 8008:8081 ubuntu:v5_nexus
 
+##Zabbix
+docker build -t ubuntu:v6_zabbix .
+
+docker run -d -p 80:80 ubuntu:v6_zabbix
+
 ##Tomcat
 docker build -t ubuntu:v7_tomcat .
 
