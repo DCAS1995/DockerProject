@@ -20,6 +20,7 @@ RUN dpkg -i zabbix-release_3.2-1+xenial_all.deb
 RUN apt-get update
 RUN apt-get install -q -y zabbix-server-mysql zabbix-frontend-php
 
+#Set timezone for the apache server
 RUN sed -i '/;date.timezone =/c\date.timezone = UTC' /etc/php/7.0/apache2/php.ini
 
 #Create database schema
@@ -32,6 +33,7 @@ RUN service mysql start \
 WORKDIR /usr/share/doc/zabbix-server-mysql
 RUN service mysql start && zcat create.sql.gz | mysql zabbixdb -u zabbix -p123
 
+#Update zabbix server config file
 RUN sed -i '82i DBHost=localhost' /etc/zabbix/zabbix_server.conf
 RUN sed -i '92i DBName=zabbixdb' /etc/zabbix/zabbix_server.conf
 RUN sed -i '93d' /etc/zabbix/zabbix_server.conf
@@ -41,6 +43,7 @@ RUN sed -i '117i DBPassword=123' /etc/zabbix/zabbix_server.conf
 RUN sed -i '132d ' /etc/zabbix/zabbix_server.conf
 RUN sed -i '132i DBPort=3306' /etc/zabbix/zabbix_server.conf
 
-RUN cat -n /etc/zabbix/zabbix_server.conf
+#restart servers and start everything up on boot
+#RUN cat -n /etc/zabbix/zabbix_server.conf
 RUN service apache2 restart && service zabbix-server restart 
 ENTRYPOINT service apache2 start && service zabbix-server start && service mysql start && bash
